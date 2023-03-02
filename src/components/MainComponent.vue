@@ -1,22 +1,30 @@
 <template>
-  <main v-for="project in projects"> {{ project.name }} </main>
+  <main>
+    <div class="container">
+      <div class="row">
+        <ProjectCard v-for="project in projects" :projectInfo="project" />
+      </div>
+    </div>
+  </main>
 </template>
 <script>
 import axios from 'axios';
+import ProjectCard from './ProjectCard.vue';
 export default {
-  name: 'AppMain',
+  name: "AppMain",
+  components: {
+    ProjectCard,
+  },
   data() {
     return {
       projects: [],
-      apiUrl: 'http://127.0.0.1:8000/api/projects/'
-    }
+      apiUrl: "http://127.0.0.1:8000/api/projects/"
+    };
   },
-
   methods: {
     getProjects() {
       axios.get(this.apiUrl, {
-        params: {
-        }
+        params: {}
       })
         .then((response) => {
           console.log(response.data.results.data);

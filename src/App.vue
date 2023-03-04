@@ -1,15 +1,18 @@
 <script>
+import HeaderComponent from './components/HeaderComponent.vue';
 import MainComponent from './components/MainComponent.vue';
 export default {
   name: 'App',
   components: {
     MainComponent,
+    HeaderComponent
   }
 }
 </script>
 
 <template>
-  <MainComponent />
+  <HeaderComponent />
+  <router-view></router-view>
 </template>
 
 <style lang="scss">

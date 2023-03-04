@@ -1,10 +1,8 @@
 <script>
 import HeaderComponent from './components/HeaderComponent.vue';
-import MainComponent from './components/MainComponent.vue';
 export default {
   name: 'App',
   components: {
-    MainComponent,
     HeaderComponent
   }
 }
@@ -12,7 +10,9 @@ export default {
 
 <template>
   <HeaderComponent />
-  <router-view></router-view>
+  <main>
+    <router-view></router-view>
+  </main>
 </template>
 
 <style lang="scss">

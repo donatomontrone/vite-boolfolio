@@ -1,6 +1,6 @@
 <template>
-    <header>
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <header class="mb-3">
+        <nav class="navbar navbar-expand-md navbar-light bg-body-tertiary shadow-sm shadow">
             <div class="container-fluid">
                 <router-link class="navbar-brand d-flex align-items-center" :to="{ name: 'home' }">
                     <div class="img-logo">
@@ -45,7 +45,7 @@ export default {
         }
     },
     methods: {
-        getImagePath: function (img) {
+        getImagePath(img) {
             return new URL((`../assets/${img}`), import.meta.url).href;
         },
     },

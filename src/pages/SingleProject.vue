@@ -23,14 +23,15 @@ export default {
     data() {
         return {
             apiUrl: 'http://127.0.0.1:8000',
-            project: ''
+            project: '',
+            apiToken: 'dUr4I9yNTerbx0gun1Y2ZGQ6vQm56R1PpkUc0iaS9gYqN4Pd6g9X0YucE7xM'
         }
     },
     methods: {
         getProject() {
             axios.get(this.apiUrl + `/api/projects/${this.$route.params.slug}`, {
                 params: {
-                    'api_token': 'dUr4I9yNTerbx0gun1Y2ZGQ6vQm56R1PpkUc0iaS9gYqN4Pd6g9X0YucE7xM'
+                    'api_token': this.apiToken,
                 }
             })
                 .then((response) => {

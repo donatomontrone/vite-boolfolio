@@ -29,6 +29,9 @@ export default {
     methods: {
         getProject() {
             axios.get(this.apiUrl + `/api/projects/${this.$route.params.slug}`, {
+                params: {
+                    'api_token': 'dUr4I9yNTerbx0gun1Y2ZGQ6vQm56R1PpkUc0iaS9gYqN4Pd6g9X0YucE7xM'
+                }
             })
                 .then((response) => {
                     console.log(response.data.results.data);
